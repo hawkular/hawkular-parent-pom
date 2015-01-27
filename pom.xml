@@ -13,17 +13,17 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>Hawkular Root Parent</name>
+  <name>Hawkular Parent</name>
   <description>Hawkular Parent POM</description>
   <url>http://github.com/hawkular</url>
   <inceptionYear>2015</inceptionYear>
   <organization>
-    <name>Red Hat</name>
-    <url>http://www.redhat.com/</url>
+    <name>Red Hat, Inc.</name>
+    <url>http://redhat.com/</url>
   </organization>
   <licenses>
     <license>
-      <name>The Apache Software License, Version 2.0</name>
+      <name>Apache License, Version 2.0</name>
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
       <distribution>repo</distribution>
     </license>
