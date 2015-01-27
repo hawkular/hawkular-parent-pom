@@ -39,10 +39,6 @@
     <system>jira</system>
     <url>https://issues.jboss.org/browse/HAWKULAR</url>
   </issueManagement>
-  <ciManagement>
-    <system>hudson</system>
-    <url>https://hudson.jboss.org/hudson/job/hawkular</url>
-  </ciManagement>
   <distributionManagement>
     <repository>
       <id>jboss-releases-repository</id>
