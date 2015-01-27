@@ -43,6 +43,18 @@
     <system>hudson</system>
     <url>https://hudson.jboss.org/hudson/job/hawkular</url>
   </ciManagement>
+  <distributionManagement>
+    <repository>
+      <id>jboss-releases-repository</id>
+      <name>JBoss Releases Repository</name>
+      <url>${jboss.releases.repo.url}</url>
+    </repository>
+    <snapshotRepository>
+      <id>jboss-snapshots-repository</id>
+      <name>JBoss Snapshots Repository</name>
+      <url>${jboss.snapshots.repo.url}</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <properties>
 
@@ -74,6 +86,11 @@
     <version.org.jboss.spec>1.0.0.Final</version.org.jboss.spec>
     <version.org.testng>6.5.2</version.org.testng>
     <version.org.wildfly>8.2.0.Final</version.org.wildfly>
+
+
+    <!-- Repository Deployment URLs -->
+    <jboss.releases.repo.url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</jboss.releases.repo.url>
+    <jboss.snapshots.repo.url>https://repository.jboss.org/nexus/content/repositories/snapshots/</jboss.snapshots.repo.url>
 
   </properties>
 
