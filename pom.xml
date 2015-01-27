@@ -30,9 +30,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git@github.com:hawkular/hawkular.git</connection>
-    <developerConnection>scm:git:git@github.com:hawkular/hawkular.git</developerConnection>
-    <url>https://github.com/hawkular</url>
+    <connection>scm:git:git@github.com:hawkular/hawkular-parent-pom.git</connection>
+    <developerConnection>scm:git:git@github.com:hawkular/hawkular-parent-pom.git</developerConnection>
+    <url>https://github.com/hawkular/hawkular-parent-pom</url>
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
