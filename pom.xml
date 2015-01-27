@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.hawkular</groupId>
   <artifactId>hawkular-parent</artifactId>
-  <packaging>pom</packaging>
-
   <!-- Important a released version should always follow any of these patterns: -->
   <!-- major.minor.micro.Alpha[n] -->
   <!-- major.minor.micro.Beta[n] -->
   <!-- major.minor.micro.CR[n] -->
   <!-- major.minor.micro.Final -->
   <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
   <name>Hawkular Root Parent</name>
   <description>Hawkular Parent POM</description>
-
   <url>http://github.com/hawkular</url>
   <inceptionYear>2015</inceptionYear>
   <organization>
@@ -38,14 +35,14 @@
     <url>https://github.com/hawkular</url>
     <tag>HEAD</tag>
   </scm>
-  <ciManagement>
-    <system>hudson</system>
-    <url>https://hudson.jboss.org/hudson/job/hawkular</url>
-  </ciManagement>
   <issueManagement>
     <system>jira</system>
     <url>https://issues.jboss.org/browse/HAWKULAR</url>
   </issueManagement>
+  <ciManagement>
+    <system>hudson</system>
+    <url>https://hudson.jboss.org/hudson/job/hawkular</url>
+  </ciManagement>
 
   <properties>
 
@@ -79,23 +76,6 @@
     <version.org.wildfly>8.2.0.Final</version.org.wildfly>
 
   </properties>
-
-  <profiles>
-    <profile>
-      <id>test.debug</id>
-      <activation>
-        <property>
-          <name>test.debug</name>
-        </property>
-      </activation>
-
-      <properties>
-        <!-- See: http://maven.apache.org/plugins/maven-surefire-plugin/test-mojo.html#debugForkedProcess -->
-        <maven.surefire.debug>-Xdebug -Xnoagent -Djava.compiler=NONE
-          -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=y</maven.surefire.debug>
-      </properties>
-    </profile>
-  </profiles>
 
   <build>
     <pluginManagement>
@@ -158,7 +138,6 @@
 
       </plugins>
     </pluginManagement>
-
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -195,4 +174,20 @@
     </plugins>
   </build>
 
+  <profiles>
+    <profile>
+      <id>test.debug</id>
+      <activation>
+        <property>
+          <name>test.debug</name>
+        </property>
+      </activation>
+
+      <properties>
+        <!-- See: http://maven.apache.org/plugins/maven-surefire-plugin/test-mojo.html#debugForkedProcess -->
+        <maven.surefire.debug>-Xdebug -Xnoagent -Djava.compiler=NONE
+          -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=y</maven.surefire.debug>
+      </properties>
+    </profile>
+  </profiles>
 </project>
