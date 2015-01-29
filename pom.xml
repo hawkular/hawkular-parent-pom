@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<!--
+
+    Copyright 2015 Red Hat, Inc. and/or its affiliates
+    and other contributors as indicated by the @author tags.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.hawkular</groupId>
@@ -65,56 +84,94 @@
 
   <properties>
 
-    <!-- MAVEN VERSIONS -->
+    <!-- Maven general -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <maven-compiler-source-version>1.8</maven-compiler-source-version>
-    <maven-compiler-target-version>1.8</maven-compiler-target-version>
+    <!-- maven-compiler-plugin -->
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
 
-    <plugin.version.org.apache.maven.plugins-maven-antrun-plugin>1.7</plugin.version.org.apache.maven.plugins-maven-antrun-plugin>
-    <plugin.version.org.apache.maven.plugins-maven-assembly-plugin>2.4</plugin.version.org.apache.maven.plugins-maven-assembly-plugin>
-    <plugin.version.org.apache.maven.plugins-maven-compiler-plugin>2.5.1</plugin.version.org.apache.maven.plugins-maven-compiler-plugin>
-    <plugin.version.org.apache.maven.plugins-maven-enforcer-plugin>1.3.1</plugin.version.org.apache.maven.plugins-maven-enforcer-plugin>
-    <plugin.version.org.apache.maven.plugins-maven-jar-plugin>2.4</plugin.version.org.apache.maven.plugins-maven-jar-plugin>
-    <plugin.version.org.apache.maven.plugins-maven-release-plugin>2.5.1</plugin.version.org.apache.maven.plugins-maven-release-plugin>
-    <plugin.version.org.apache.maven.plugins-maven-surefire-plugin>2.12.4</plugin.version.org.apache.maven.plugins-maven-surefire-plugin>
-    <plugin.version.org.codehaus.mojo-exec-maven-plugin>1.3.1</plugin.version.org.codehaus.mojo-exec-maven-plugin>
+    <!-- Checkstyle and maven-checkstyle-plugin -->
+    <version.com.puppycrawl.tools.checkstyle>6.1.1</version.com.puppycrawl.tools.checkstyle>
+    <!-- the default value pointing at checkstyle.xml in hawkular-build-tools -->
+    <checkstyle.configLocation>hawkular-checkstyle/checkstyle.xml</checkstyle.configLocation>
+    <checkstyle.consoleOutput>true</checkstyle.consoleOutput>
+    <checkstyle.failOnError>true</checkstyle.failOnError>
+    <!-- the default value pointing at suppressions.xml in hawkular-build-tools -->
+    <checkstyle.suppressions.file>hawkular-checkstyle/suppressions.xml</checkstyle.suppressions.file>
 
-    <!-- DEPENDENCY VERSIONS -->
+    <!-- license-maven-plugin -->
+    <license.headerTemplatePath>hawkular-license/jboss-apache-2-template.txt</license.headerTemplatePath>
+    <license.failIfMissing>true</license.failIfMissing>
 
-    <!-- CONVENTIONS: -->
-    <!-- - A version property must be specified in the format "version.{groupId}" -->
-    <!-- - If groupId is not unique, append the property name with "-{artifactId}" -->
-    <!-- - Version properties must be sorted alphabetically -->
+    <!-- hawkular-build-tools are used by both maven-checkstyle-plugin and lisense-plugin -->
+    <version.org.hawkular.hawkular-build-tools>5</version.org.hawkular.hawkular-build-tools>
 
-    <version.com.google.code.gson>2.2.4</version.com.google.code.gson>
-    <version.com.google.guava>16.0.1</version.com.google.guava>
-    <version.gnu.getopt>1.0.13</version.gnu.getopt>
-    <version.junit>4.11</version.junit>
-    <version.org.apache.activemq>5.10.0</version.org.apache.activemq>
-    <version.org.jboss.spec>1.0.0.Final</version.org.jboss.spec>
-    <version.org.testng>6.5.2</version.org.testng>
-    <version.org.wildfly>8.2.0.Final</version.org.wildfly>
-
+    <!--
+      Maven plugin versions
+        Naming convention: version.${artifactId} whenever unique enough; otherwise version.${groupId}.${artifactId}
+        Ordering: alphabetic
+    -->
+    <version.com.mycila.license-maven-plugin>2.8</version.com.mycila.license-maven-plugin>
+    <version.exec-maven-plugin>1.3.2</version.exec-maven-plugin>
+    <version.maven-antrun-plugin>1.7</version.maven-antrun-plugin>
+    <version.maven-assembly-plugin>2.5.1</version.maven-assembly-plugin>
+    <version.maven-checkstyle-plugin>2.13</version.maven-checkstyle-plugin>
+    <version.maven-clean-plugin>2.6</version.maven-clean-plugin>
+    <version.maven-compiler-plugin>3.2</version.maven-compiler-plugin>
+    <version.maven-dependency-plugin>2.9</version.maven-dependency-plugin>
+    <version.maven-deploy-plugin>2.8.2</version.maven-deploy-plugin>
+    <version.maven-enforcer-plugin>1.3.1</version.maven-enforcer-plugin>
+    <version.maven-failsafe-plugin>2.18.1</version.maven-failsafe-plugin>
+    <version.maven-install-plugin>2.5.2</version.maven-install-plugin>
+    <version.maven-jar-plugin>2.5</version.maven-jar-plugin>
+    <version.maven-javadoc-plugin>2.10.1</version.maven-javadoc-plugin>
+    <version.maven-release-plugin>2.5.1</version.maven-release-plugin>
+    <version.maven-resources-plugin>2.7</version.maven-resources-plugin>
+    <version.maven-site-plugin>3.4</version.maven-site-plugin>
+    <version.maven-source-plugin>2.4</version.maven-source-plugin>
+    <version.maven-surefire-plugin>2.17</version.maven-surefire-plugin>
+    <version.maven-war-plugin>2.5</version.maven-war-plugin>
 
     <!-- Repository Deployment URLs -->
-    <jboss.releases.repo.url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</jboss.releases.repo.url>
-    <jboss.snapshots.repo.url>https://repository.jboss.org/nexus/content/repositories/snapshots/</jboss.snapshots.repo.url>
+    <jboss.releases.repo.url>
+      https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/
+    </jboss.releases.repo.url>
+    <jboss.snapshots.repo.url>
+      https://repository.jboss.org/nexus/content/repositories/snapshots/
+    </jboss.snapshots.repo.url>
 
   </properties>
 
   <build>
     <pluginManagement>
       <plugins>
+        <!-- Ordering: alphabetic by the version property -->
+
+        <plugin>
+          <groupId>com.mycila</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <version>${version.com.mycila.license-maven-plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>${version.exec-maven-plugin}</version>
+        </plugin>
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-antrun-plugin</artifactId>
-          <version>${plugin.version.org.apache.maven.plugins-maven-antrun-plugin}</version>
+          <version>${version.maven-antrun-plugin}</version>
         </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>${plugin.version.org.apache.maven.plugins-maven-assembly-plugin}</version>
+          <version>${version.maven-assembly-plugin}</version>
           <configuration>
             <tarLongFileMode>gnu</tarLongFileMode>
           </configuration>
@@ -122,20 +179,56 @@
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>${version.maven-checkstyle-plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>${version.maven-clean-plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>${plugin.version.org.apache.maven.plugins-maven-compiler-plugin}</version>
+          <version>${version.maven-compiler-plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>${version.maven-dependency-plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>${version.maven-deploy-plugin}</version>
         </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>${plugin.version.org.apache.maven.plugins-maven-enforcer-plugin}</version>
+          <version>${version.maven-enforcer-plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>${version.maven-failsafe-plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>${version.maven-install-plugin}</version>
         </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>${plugin.version.org.apache.maven.plugins-maven-jar-plugin}</version>
+          <version>${version.maven-jar-plugin}</version>
           <configuration>
             <archive>
               <manifest>
@@ -148,8 +241,14 @@
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>${version.maven-javadoc-plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
-          <version>${plugin.version.org.apache.maven.plugins-maven-release-plugin}</version>
+          <version>${version.maven-release-plugin}</version>
           <configuration>
             <tagNameFormat>@{project.version}</tagNameFormat>
             <preparationGoals>package</preparationGoals>
@@ -159,32 +258,98 @@
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>${version.maven-resources-plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>${version.maven-site-plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId></artifactId>
+          <version>${version.maven-source-plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>${plugin.version.org.apache.maven.plugins-maven-surefire-plugin}</version>
+          <version>${version.maven-surefire-plugin}</version>
           <configuration>
             <argLine>-Xmx512m</argLine>
           </configuration>
         </plugin>
 
         <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>exec-maven-plugin</artifactId>
-          <version>${plugin.version.org.codehaus.mojo-exec-maven-plugin}</version>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>${version.maven-war-plugin}</version>
         </plugin>
 
       </plugins>
     </pluginManagement>
+
     <plugins>
+      <!-- Ordering: same as pluginManagement - alphabetic by the version property -->
+
+      <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <configuration>
+          <header>${license.headerTemplatePath}</header>
+          <excludes>
+            <exclude>**/.bowerrc</exclude>
+            <exclude>**/.jshintrc</exclude>
+            <exclude>**/LICENSE</exclude>
+            <exclude>**/README</exclude>
+            <exclude>**/README.*</exclude>
+            <exclude>**/*.eot</exclude>
+            <exclude>**/*.otf</exclude>
+            <exclude>**/*.ttf</exclude>
+            <exclude>**/*.svg</exclude>
+            <exclude>**/*.woff</exclude>
+            <exclude>**/*.html</exclude>
+            <exclude>**/*.htm</exclude>
+          </excludes>
+          <mapping>
+            <conf>SCRIPT_STYLE</conf>
+            <cql>DOUBLEDASHES_STYLE</cql>
+            <Dockerfile>SCRIPT_STYLE</Dockerfile>
+            <g4>SLASHSTAR_STYLE</g4>
+            <iql>DOUBLEDASHES_STYLE</iql>
+            <jshintrc>SLASHSTAR_STYLE</jshintrc>
+            <java>SLASHSTAR_STYLE</java>
+            <ts>SLASHSTAR_STYLE</ts>
+            <yaml>SCRIPT_STYLE</yaml>
+            <yml>SCRIPT_STYLE</yml>
+          </mapping>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.hawkular</groupId>
+            <artifactId>hawkular-build-tools</artifactId>
+            <version>${version.org.hawkular.hawkular-build-tools}</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>${maven-compiler-source-version}</source>
-          <target>${maven-compiler-target-version}</target>
           <optimize>true</optimize>
           <debug>true</debug>
           <showDeprecation>true</showDeprecation>
-          <showWarnings>true</showWarnings>
         </configuration>
       </plugin>
 
@@ -193,20 +358,98 @@
         <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
           <execution>
-            <phase>validate</phase>
+            <id>enforce-rules</id>
             <goals>
               <goal>enforce</goal>
             </goals>
-            <configuration>
-              <rules>
-                <requireMavenVersion>
-                  <version>[3.0.4,)</version>
-                </requireMavenVersion>
-              </rules>
-            </configuration>
+          </execution>
+        </executions>
+        <configuration>
+          <rules>
+            <requireMavenVersion>
+              <version>[3.0.4,)</version>
+            </requireMavenVersion>
+            <requireJavaVersion>
+              <version>[1.8,)</version>
+            </requireJavaVersion>
+            <requireNoRepositories/>
+            <requirePluginVersions/>
+          </rules>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <configuration>
+          <configLocation>${checkstyle.configLocation}</configLocation>
+          <consoleOutput>${checkstyle.consoleOutput}</consoleOutput>
+          <failsOnError>${checkstyle.failOnError}</failsOnError>
+          <!-- Make includes relative to ${basedir} -->
+          <sourceDirectory>${basedir}</sourceDirectory>
+          <!-- in <includes>, it is necessary to avoid using an item-initial **/ wildcard
+               which pulls in also files from all submodules and target folders. We do not want
+               that. We rather have to name specific root folder patterns like *.extension
+               or directory/**/*.extension -->
+          <includes>
+            src/**/*.java,
+            *.xml,
+            src/**/*.xml,
+            src/**/*.js,
+            *.adoc,
+            src/**/*.adoc,
+            *.conf,
+            src/**/*.conf,
+            src/**/*.cql,
+            src/**/*.css,
+            Dockerfile,
+            src/**/Dockerfile,
+            src/**/*.groovy,
+            *.html,
+            src/**/*.html,
+            src/**/*.json,
+            src/**/*.js.map,
+            *.md,
+            src/**/*.md,
+            *.properties,
+            src/**/*.properties,
+            *.sh,
+            src/**/*.sh,
+            *.txt,
+            src/**/*.txt,
+            src/**/*.xsl,
+            *.yml,
+            src/**/*.yml,
+            src/**/*.yaml,
+          </includes>
+          <!-- to override in a submodule, just redefine the checkstyle.suppressions.file property
+               in the given submodule's pom -->
+          <suppressionsLocation>${checkstyle.suppressions.file}</suppressionsLocation>
+          <useFile />
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>${version.com.puppycrawl.tools.checkstyle}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.hawkular</groupId>
+            <artifactId>hawkular-build-tools</artifactId>
+            <version>${version.org.hawkular.hawkular-build-tools}</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>check-style</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>checkstyle</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
+
     </plugins>
   </build>
 
