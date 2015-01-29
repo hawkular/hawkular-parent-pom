@@ -439,6 +439,9 @@
             src/**/*.yml,
             src/**/*.yaml,
           </includes>
+          <excludes>
+            release.properties
+          </excludes>
           <!-- to override in a submodule, just redefine the checkstyle.suppressions.file property
                in the given submodule's pom -->
           <suppressionsLocation>${checkstyle.suppressions.file}</suppressionsLocation>
