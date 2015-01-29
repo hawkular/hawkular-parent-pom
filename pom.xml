@@ -102,14 +102,12 @@
     <!-- the default value pointing at suppressions.xml in hawkular-build-tools -->
     <checkstyle.suppressions.file>hawkular-checkstyle/suppressions.xml</checkstyle.suppressions.file>
 
-    <!-- license -->
+    <!-- license-maven-plugin -->
     <license.headerTemplatePath>hawkular-license/jboss-apache-2-template.txt</license.headerTemplatePath>
-    <license.failIfMissing>false</license.failIfMissing>
+    <license.failIfMissing>true</license.failIfMissing>
 
     <!-- hawkular-build-tools are used by both maven-checkstyle-plugin and lisense-plugin -->
     <version.org.hawkular.hawkular-build-tools>5</version.org.hawkular.hawkular-build-tools>
-
-
 
     <!--
       Maven plugin versions
