@@ -2,6 +2,21 @@
 
 A common configuration base for building Hawkular projects.
 
+== How to use
+
+To use this `hawkular-parent` as the base of your project, just add the following snippet at the beginning of your
+project's `pom.xml` file:
+
+[source,xml]
+----
+  <parent>
+    <groupId>org.hawkular</groupId>
+    <artifactId>hawkular-parent</artifactId>
+    <!-- It is quite likely that this version is out of date at the time when you read this -->
+    <version>2</version>
+  </parent>
+----
+
 == License
 
 Hawkular is released under Apache License, Version 2.0 as described in the link:LICENSE[LICENSE] document
