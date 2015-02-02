@@ -133,6 +133,7 @@
     <version.maven-source-plugin>2.4</version.maven-source-plugin>
     <version.maven-surefire-plugin>2.17</version.maven-surefire-plugin>
     <version.maven-war-plugin>2.5</version.maven-war-plugin>
+    <version.org.bsc.maven.maven-processor-plugin>2.0.2</version.org.bsc.maven.maven-processor-plugin>
 
     <!-- Repository Deployment URLs -->
     <jboss.releases.repo.url>
@@ -145,8 +146,7 @@
     <!--
       Candidates for Hawkular Internal BoM
       Consider the following properties as unstable
-      The artifacts will be managed by the BoM module once it is introduced
-    -->
+      The artifacts will be managed by the BoM module once it is introduced    -->
     <version.com.google.code.gson>2.2.4</version.com.google.code.gson>
     <version.com.google.guava>16.0.1</version.com.google.guava>
     <version.gnu.getopt>1.0.13</version.gnu.getopt>
@@ -154,10 +154,10 @@
     <version.org.apache.activemq>5.10.0</version.org.apache.activemq>
     <version.org.jboss.spec>1.0.0.Final</version.org.jboss.spec>
     <version.org.jboss.logging>3.1.0.GA</version.org.jboss.logging>
-    <version.org.jboss.logging.processor>1.0.0.Final</version.org.jboss.logging.processor>
+    <version.org.jboss.logging.jboss-logging-annotations>1.2.0.Final</version.org.jboss.logging.jboss-logging-annotations>
+    <version.org.jboss.logging.jboss-logging-processor>1.2.0.Final</version.org.jboss.logging.jboss-logging-processor>
     <version.org.testng>6.5.2</version.org.testng>
     <version.org.wildfly>8.2.0.Final</version.org.wildfly>
-
 
   </properties>
 
@@ -303,6 +303,12 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-war-plugin</artifactId>
           <version>${version.maven-war-plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.bsc.maven</groupId>
+          <artifactId>maven-processor-plugin</artifactId>
+          <version>${version.org.bsc.maven.maven-processor-plugin}</version>
         </plugin>
 
       </plugins>
@@ -467,6 +473,33 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.bsc.maven</groupId>
+        <artifactId>maven-processor-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>process</id>
+            <goals>
+              <goal>process</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <processors>
+                <processor>org.jboss.logging.processor.apt.LoggingToolsProcessor</processor>
+              </processors>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging-processor</artifactId>
+            <version>${version.org.jboss.logging.jboss-logging-processor}</version>
+            <scope>compile</scope>
+          </dependency>
+        </dependencies>
       </plugin>
 
     </plugins>
