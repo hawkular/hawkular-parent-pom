@@ -133,8 +133,8 @@
     <version.maven-source-plugin>2.4</version.maven-source-plugin>
     <version.maven-surefire-plugin>2.17</version.maven-surefire-plugin>
     <version.maven-war-plugin>2.5</version.maven-war-plugin>
-    <version.org.codehaus.gmavenplus.gmavenplus-plugin>1.2</version.org.codehaus.gmavenplus.gmavenplus-plugin>
     <version.org.bsc.maven.maven-processor-plugin>2.0.2</version.org.bsc.maven.maven-processor-plugin>
+    <version.org.codehaus.gmavenplus.gmavenplus-plugin>1.2</version.org.codehaus.gmavenplus.gmavenplus-plugin>
 
     <!-- Repository Deployment URLs -->
     <jboss.releases.repo.url>
@@ -415,44 +415,7 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <optimize>true</optimize>
-          <debug>true</debug>
-          <showDeprecation>true</showDeprecation>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>enforce-rules</id>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <rules>
-            <requireMavenVersion>
-              <version>[3.0.4,)</version>
-            </requireMavenVersion>
-            <requireJavaVersion>
-              <version>[1.8,)</version>
-            </requireJavaVersion>
-            <requireNoRepositories />
-            <requirePluginVersions />
-          </rules>
-        </configuration>
-      </plugin>
-
-      <plugin>
+      </plugin><plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <configuration>
@@ -528,19 +491,41 @@
       </plugin>
 
       <plugin>
-        <groupId>org.codehaus.gmavenplus</groupId>
-        <artifactId>gmavenplus-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <optimize>true</optimize>
+          <debug>true</debug>
+          <showDeprecation>true</showDeprecation>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
           <execution>
+            <id>enforce-rules</id>
             <goals>
-              <goal>addSources</goal>
-              <goal>addTestSources</goal>
-              <goal>compile</goal>
-              <goal>testCompile</goal>
+              <goal>enforce</goal>
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <rules>
+            <requireMavenVersion>
+              <version>[3.0.4,)</version>
+            </requireMavenVersion>
+            <requireJavaVersion>
+              <version>[1.8,)</version>
+            </requireJavaVersion>
+            <requireNoRepositories />
+            <requirePluginVersions />
+          </rules>
+        </configuration>
       </plugin>
+
+
 
       <plugin>
         <groupId>org.bsc.maven</groupId>
@@ -567,6 +552,21 @@
             <scope>compile</scope>
           </dependency>
         </dependencies>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.gmavenplus</groupId>
+        <artifactId>gmavenplus-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>addSources</goal>
+              <goal>addTestSources</goal>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
 
     </plugins>
