@@ -134,7 +134,7 @@
     <version.maven-source-plugin>2.4</version.maven-source-plugin>
     <version.maven-surefire-plugin>2.17</version.maven-surefire-plugin>
     <version.maven-war-plugin>2.5</version.maven-war-plugin>
-    <version.org.bsc.maven.maven-processor-plugin>2.0.2</version.org.bsc.maven.maven-processor-plugin>
+    <version.org.bsc.maven.maven-processor-plugin>2.2.4</version.org.bsc.maven.maven-processor-plugin>
     <version.org.codehaus.gmavenplus.gmavenplus-plugin>1.2</version.org.codehaus.gmavenplus.gmavenplus-plugin>
 
     <!-- Repository Deployment URLs -->
