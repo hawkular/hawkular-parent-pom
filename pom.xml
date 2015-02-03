@@ -545,6 +545,7 @@
             </goals>
             <phase>generate-sources</phase>
             <configuration>
+              <addCompileSourceRoots>true</addCompileSourceRoots>
               <processors>
                 <processor>org.jboss.logging.processor.apt.LoggingToolsProcessor</processor>
               </processors>
