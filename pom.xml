@@ -422,7 +422,9 @@
             </goals>
           </execution>
         </executions>
-      </plugin><plugin>
+      </plugin>
+
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <configuration>
@@ -531,8 +533,6 @@
           </rules>
         </configuration>
       </plugin>
-
-
 
       <plugin>
         <groupId>org.bsc.maven</groupId>
