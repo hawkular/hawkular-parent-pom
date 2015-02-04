@@ -106,7 +106,7 @@
     <license.failIfMissing>true</license.failIfMissing>
 
     <!-- hawkular-build-tools are used by both maven-checkstyle-plugin and lisense-plugin -->
-    <version.org.hawkular.hawkular-build-tools>5</version.org.hawkular.hawkular-build-tools>
+    <version.org.hawkular.hawkular-build-tools>6</version.org.hawkular.hawkular-build-tools>
 
     <!--
       Maven plugin versions
@@ -399,6 +399,7 @@
             <exclude>**/LICENSE</exclude>
             <exclude>**/README</exclude>
             <exclude>**/README.*</exclude>
+            <exclude>**/*.d.ts</exclude>
             <exclude>**/*.eot</exclude>
             <exclude>**/*.otf</exclude>
             <exclude>**/*.ttf</exclude>
@@ -407,6 +408,9 @@
             <exclude>**/*.html</exclude>
             <exclude>**/*.htm</exclude>
           </excludes>
+          <headerDefinitions>
+            <headerDefinition>hawkular-license/triple-slash-style.xml</headerDefinition>
+          </headerDefinitions>
           <mapping>
             <conf>SCRIPT_STYLE</conf>
             <cql>DOUBLEDASHES_STYLE</cql>
@@ -415,7 +419,7 @@
             <iql>DOUBLEDASHES_STYLE</iql>
             <jshintrc>SLASHSTAR_STYLE</jshintrc>
             <java>SLASHSTAR_STYLE</java>
-            <ts>SLASHSTAR_STYLE</ts>
+            <ts>triple_slash_style</ts>
             <yaml>SCRIPT_STYLE</yaml>
             <yml>SCRIPT_STYLE</yml>
           </mapping>
@@ -481,7 +485,8 @@
             src/**/*.yaml,
           </includes>
           <excludes>
-            release.properties
+            release.properties,
+            **/*.d.ts,
           </excludes>
           <!-- to override in a submodule, just redefine the checkstyle.suppressions.file property
                in the given submodule's pom -->
