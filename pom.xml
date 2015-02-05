@@ -134,7 +134,6 @@
     <version.maven-source-plugin>2.4</version.maven-source-plugin>
     <version.maven-surefire-plugin>2.17</version.maven-surefire-plugin>
     <version.maven-war-plugin>2.5</version.maven-war-plugin>
-    <version.org.bsc.maven.maven-processor-plugin>2.0.2</version.org.bsc.maven.maven-processor-plugin>
     <version.org.codehaus.gmavenplus.gmavenplus-plugin>1.2</version.org.codehaus.gmavenplus.gmavenplus-plugin>
 
     <!-- Repository Deployment URLs -->
@@ -204,6 +203,11 @@
         <groupId>org.jboss.logging</groupId>
         <artifactId>jboss-logging-annotations</artifactId>
         <version>${version.org.jboss.logging.jboss-logging-annotations}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.logging</groupId>
+        <artifactId>jboss-logging-processor</artifactId>
+        <version>${version.org.jboss.logging.jboss-logging-processor}</version>
       </dependency>
 
       <dependency>
@@ -378,12 +382,6 @@
           <version>${version.org.codehaus.gmavenplus.gmavenplus-plugin}</version>
         </plugin>
 
-        <plugin>
-          <groupId>org.bsc.maven</groupId>
-          <artifactId>maven-processor-plugin</artifactId>
-          <version>${version.org.bsc.maven.maven-processor-plugin}</version>
-        </plugin>
-
       </plugins>
     </pluginManagement>
 
@@ -520,6 +518,8 @@
           <optimize>true</optimize>
           <debug>true</debug>
           <showDeprecation>true</showDeprecation>
+          <!-- Workaround for https://jira.codehaus.org/browse/MCOMPILER-236 present in compiler plugin 3.2 -->
+          <useIncrementalCompilation>false</useIncrementalCompilation>
         </configuration>
       </plugin>
 
@@ -546,34 +546,6 @@
             <requirePluginVersions />
           </rules>
         </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.bsc.maven</groupId>
-        <artifactId>maven-processor-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>process</id>
-            <goals>
-              <goal>process</goal>
-            </goals>
-            <phase>generate-sources</phase>
-            <configuration>
-              <addCompileSourceRoots>true</addCompileSourceRoots>
-              <processors>
-                <processor>org.jboss.logging.processor.apt.LoggingToolsProcessor</processor>
-              </processors>
-            </configuration>
-          </execution>
-        </executions>
-        <dependencies>
-          <dependency>
-            <groupId>org.jboss.logging</groupId>
-            <artifactId>jboss-logging-processor</artifactId>
-            <version>${version.org.jboss.logging.jboss-logging-processor}</version>
-            <scope>compile</scope>
-          </dependency>
-        </dependencies>
       </plugin>
 
       <plugin>
