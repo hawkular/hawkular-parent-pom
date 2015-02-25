@@ -136,7 +136,7 @@
     <version.maven-war-plugin>2.5</version.maven-war-plugin>
     <version.org.codehaus.gmavenplus.gmavenplus-plugin>1.2</version.org.codehaus.gmavenplus.gmavenplus-plugin>
     <version.org.codehaus.mojo.xml-maven-plugin>1.0</version.org.codehaus.mojo.xml-maven-plugin>
-    <version.wildfly-extension-maven-plugin>0.5.0</version.wildfly-extension-maven-plugin>
+    <version.wildfly-extension-maven-plugin>0.6.0</version.wildfly-extension-maven-plugin>
 
     <!-- Repository Deployment URLs -->
     <jboss.releases.repo.url>
