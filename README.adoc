@@ -17,25 +17,6 @@ project's `pom.xml` file:
   </parent>
 ----
 
-== How to Contribute
-
-* Please keep in mind that changes in parent have wide impact and therefore:
-** Consider proposing your idea on hawkular-dev@lists.jboss.org mailing list even before you send a PR; wait for
-   feedback for some reasonable time, say one or two biz days
-** Assess the impact of your change on all hawkular projects
-*** Ideally, try to build them all with your change
-*** Ideally, link all hawkular projects' branches with your change in your PR for parent.
-* 4 eyes principle
-** Never merge your own changes
-** Ask for review (in PR, IRC, or via mail), the reviewer will merge and be co-responsible for every single bit you
-   change
-** You are free to choose your reviewer but please prefer somebody who is acquainted well enough with the subject
-   matter.
-** Why the 4 eyes principle
-*** Improves the overall code quality
-*** Improves the distribution of knowledge about the code in the team - allows others to get acquainted with your code.
-* Parent releases should ideally be acked by the git repo lead (Peter Palaga)
-
 == License
 
 Hawkular is released under Apache License, Version 2.0 as described in the link:LICENSE[LICENSE] document
