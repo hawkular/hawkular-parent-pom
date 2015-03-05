@@ -433,6 +433,7 @@
           </excludes>
           <headerDefinitions>
             <headerDefinition>hawkular-license/triple-slash-style.xml</headerDefinition>
+            <headerDefinition>hawkular-license/mustache-style.xml</headerDefinition>
           </headerDefinitions>
           <mapping>
             <conf>SCRIPT_STYLE</conf>
@@ -443,6 +444,7 @@
             <jshintrc>SLASHSTAR_STYLE</jshintrc>
             <java>SLASHSTAR_STYLE</java>
             <ts>triple_slash_style</ts>
+            <mustache>mustache_style</mustache>
             <yaml>SCRIPT_STYLE</yaml>
             <yml>SCRIPT_STYLE</yml>
           </mapping>
