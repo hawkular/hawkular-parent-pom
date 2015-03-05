@@ -437,6 +437,7 @@
           <mapping>
             <conf>SCRIPT_STYLE</conf>
             <cql>DOUBLEDASHES_STYLE</cql>
+            <css>SLASHSTAR_STYLE</css>
             <Dockerfile>SCRIPT_STYLE</Dockerfile>
             <g4>SLASHSTAR_STYLE</g4>
             <iql>DOUBLEDASHES_STYLE</iql>
