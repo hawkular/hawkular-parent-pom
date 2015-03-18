@@ -104,9 +104,10 @@
     <!-- license-maven-plugin -->
     <license.headerTemplatePath>hawkular-license/jboss-apache-2-template.txt</license.headerTemplatePath>
     <license.failIfMissing>true</license.failIfMissing>
+    <license.failIfUnknown>true</license.failIfUnknown>
 
     <!-- hawkular-build-tools are used by both maven-checkstyle-plugin and lisense-plugin -->
-    <version.org.hawkular.hawkular-build-tools>7</version.org.hawkular.hawkular-build-tools>
+    <version.org.hawkular.hawkular-build-tools>8</version.org.hawkular.hawkular-build-tools>
 
     <!--
       Maven plugin versions
@@ -114,7 +115,7 @@
         Ordering: alphabetic
     -->
     <version.com.github.kongchen.swagger-maven-plugin>2.3.3</version.com.github.kongchen.swagger-maven-plugin>
-    <version.com.mycila.license-maven-plugin>2.9</version.com.mycila.license-maven-plugin>
+    <version.com.mycila.license-maven-plugin>2.10</version.com.mycila.license-maven-plugin>
     <version.exec-maven-plugin>1.3.2</version.exec-maven-plugin>
     <version.maven-antrun-plugin>1.7</version.maven-antrun-plugin>
     <version.maven-assembly-plugin>2.5.1</version.maven-assembly-plugin>
@@ -180,7 +181,7 @@
         Other kinds of scope (such as test and provided) do not belong here ar any circumstances.
         Ordering: alphabetic by version property
       -->
-      
+
       <!-- Swagger REST annotations -->
       <dependency>
         <groupId>com.wordnik</groupId>
@@ -442,6 +443,7 @@
             <exclude>**/LICENSE</exclude>
             <exclude>**/README</exclude>
             <exclude>**/README.*</exclude>
+            <exclude>**/.travis.force.build</exclude>
             <exclude>**/*.d.ts</exclude>
             <exclude>**/*.eot</exclude>
             <exclude>**/*.otf</exclude>
@@ -451,25 +453,25 @@
             <exclude>**/*.html</exclude>
             <exclude>**/*.htm</exclude>
           </excludes>
-          <headerDefinitions>
-            <headerDefinition>hawkular-license/triple-slash-style.xml</headerDefinition>
-            <headerDefinition>hawkular-license/mustache-style.xml</headerDefinition>
-          </headerDefinitions>
           <mapping>
             <conf>SCRIPT_STYLE</conf>
             <cql>DOUBLEDASHES_STYLE</cql>
             <Dockerfile>SCRIPT_STYLE</Dockerfile>
+            <drl>SLASHSTAR_STYLE</drl>
             <g4>SLASHSTAR_STYLE</g4>
             <iql>DOUBLEDASHES_STYLE</iql>
             <jshintrc>SLASHSTAR_STYLE</jshintrc>
             <java>SLASHSTAR_STYLE</java>
-            <ts>triple_slash_style</ts>
-            <mustache>mustache_style</mustache>
             <yaml>SCRIPT_STYLE</yaml>
             <yml>SCRIPT_STYLE</yml>
           </mapping>
         </configuration>
         <dependencies>
+          <dependency>
+            <groupId>com.mycila</groupId>
+            <artifactId>license-maven-plugin-git</artifactId>
+            <version>${version.com.mycila.license-maven-plugin}</version>
+          </dependency>
           <dependency>
             <groupId>org.hawkular</groupId>
             <artifactId>hawkular-build-tools</artifactId>
