@@ -106,6 +106,9 @@
     <license.failIfMissing>true</license.failIfMissing>
     <license.failIfUnknown>true</license.failIfUnknown>
 
+    <!-- -Xdoclint:none disables javadoc validation -->
+    <javadoc.doclint>-Xdoclint:none</javadoc.doclint>
+
     <!-- hawkular-build-tools are used by both maven-checkstyle-plugin and lisense-plugin -->
     <version.org.hawkular.hawkular-build-tools>8</version.org.hawkular.hawkular-build-tools>
 
@@ -129,7 +132,7 @@
     <version.maven-failsafe-plugin>2.18.1</version.maven-failsafe-plugin>
     <version.maven-install-plugin>2.5.2</version.maven-install-plugin>
     <version.maven-jar-plugin>2.5</version.maven-jar-plugin>
-    <version.maven-javadoc-plugin>2.10.1</version.maven-javadoc-plugin>
+    <version.maven-javadoc-plugin>2.10.2</version.maven-javadoc-plugin>
     <version.maven-release-plugin>2.5.1</version.maven-release-plugin>
     <version.maven-resources-plugin>2.7</version.maven-resources-plugin>
     <version.maven-site-plugin>3.4</version.maven-site-plugin>
@@ -622,6 +625,41 @@
     <!--
       Ordering: alphabetic by id
     -->
+
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <configuration>
+              <additionalparam>${javadoc.doclint}</additionalparam>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
 
     <profile>
       <id>community.repositories</id>
