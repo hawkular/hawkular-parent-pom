@@ -110,7 +110,7 @@
     <javadoc.doclint>-Xdoclint:none</javadoc.doclint>
 
     <!-- hawkular-build-tools are used by both maven-checkstyle-plugin and lisense-plugin -->
-    <version.org.hawkular.hawkular-build-tools>8</version.org.hawkular.hawkular-build-tools>
+    <version.org.hawkular.hawkular-build-tools>9</version.org.hawkular.hawkular-build-tools>
 
     <!--
       Maven plugin versions
