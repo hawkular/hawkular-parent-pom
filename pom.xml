@@ -465,6 +465,7 @@
             <iql>DOUBLEDASHES_STYLE</iql>
             <jshintrc>SLASHSTAR_STYLE</jshintrc>
             <java>SLASHSTAR_STYLE</java>
+            <less>SLASHSTAR_STYLE</less>
             <yaml>SCRIPT_STYLE</yaml>
             <yml>SCRIPT_STYLE</yml>
           </mapping>
