@@ -178,8 +178,8 @@
     <version.org.jboss.spec.javax.servlet.jboss-servlet-api_3.1_spec>1.0.0.Final</version.org.jboss.spec.javax.servlet.jboss-servlet-api_3.1_spec>
     <version.org.mockito>1.10.19</version.org.mockito>
     <version.org.testng>6.5.2</version.org.testng>
-    <version.org.wildfly>8.2.0.Final</version.org.wildfly>
-
+    <version.org.wildfly>9.0.0.CR1</version.org.wildfly>
+    <version.org.wildfly.core>1.0.0.CR1</version.org.wildfly.core>
   </properties>
 
   <dependencyManagement>
@@ -262,7 +262,7 @@
       <!-- WildFly BOM - this also includes the org.jboss.spec:jboss-javaee-7.0 dependencies -->
       <dependency>
         <groupId>org.wildfly.bom</groupId>
-        <artifactId>jboss-javaee-7.0-with-all</artifactId>
+        <artifactId>jboss-javaee-7.0-wildfly</artifactId>
         <version>${version.org.wildfly}</version>
         <type>pom</type>
         <scope>import</scope>
