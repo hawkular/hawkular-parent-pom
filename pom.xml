@@ -199,6 +199,12 @@
       </dependency>
 
       <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${version.junit}</version>
+      </dependency>
+
+      <dependency>
         <groupId>org.codehaus.groovy</groupId>
         <artifactId>groovy-all</artifactId>
         <version>${version.org.codehaus.groovy}</version>
@@ -207,12 +213,6 @@
         <groupId>org.codehaus.groovy.modules.http-builder</groupId>
         <artifactId>http-builder</artifactId>
         <version>${version.org.codehaus.groovy.modules.http-builder}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>${version.junit}</version>
       </dependency>
 
       <dependency>
