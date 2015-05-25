@@ -241,7 +241,6 @@
         <groupId>org.jboss.spec.javax.servlet</groupId>
         <artifactId>jboss-servlet-api_3.1_spec</artifactId>
         <version>${version.org.jboss.spec.javax.servlet.jboss-servlet-api_3.1_spec}</version>
-        <scope>provided</scope>
       </dependency>
 
       <!-- WildFly BOM - this also includes the org.jboss.spec:jboss-javaee-7.0 dependencies -->
