@@ -496,6 +496,8 @@
             <Dockerfile>SCRIPT_STYLE</Dockerfile>
             <drl>SLASHSTAR_STYLE</drl>
             <g4>SLASHSTAR_STYLE</g4>
+            <gradle>SLASHSTAR_STYLE</gradle>
+            <gradlew>SCRIPT_STYLE</gradlew>
             <iql>DOUBLEDASHES_STYLE</iql>
             <jshintrc>SLASHSTAR_STYLE</jshintrc>
             <java>SLASHSTAR_STYLE</java>
