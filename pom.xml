@@ -178,8 +178,8 @@
     <version.org.jboss.spec.javax.servlet.jboss-servlet-api_3.1_spec>1.0.0.Final</version.org.jboss.spec.javax.servlet.jboss-servlet-api_3.1_spec>
     <version.org.mockito>1.10.19</version.org.mockito>
     <version.org.testng>6.5.2</version.org.testng>
-    <version.org.wildfly>9.0.0.CR1</version.org.wildfly>
-    <version.org.wildfly.core>1.0.0.CR1</version.org.wildfly.core>
+    <version.org.wildfly>9.0.0.CR2</version.org.wildfly>
+    <version.org.wildfly.core>1.0.0.CR6</version.org.wildfly.core>
   </properties>
 
   <dependencyManagement>
