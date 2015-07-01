@@ -93,7 +93,7 @@
     <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
 
     <!-- Checkstyle and maven-checkstyle-plugin -->
-    <version.com.puppycrawl.tools.checkstyle>6.7</version.com.puppycrawl.tools.checkstyle>
+    <version.com.puppycrawl.tools.checkstyle>6.8</version.com.puppycrawl.tools.checkstyle>
     <!-- the default value pointing at checkstyle.xml in hawkular-build-tools -->
     <checkstyle.configLocation>hawkular-checkstyle/checkstyle.xml</checkstyle.configLocation>
     <checkstyle.consoleOutput>true</checkstyle.consoleOutput>
@@ -113,7 +113,7 @@
     <autoReleaseAfterClose>true</autoReleaseAfterClose>
 
     <!-- hawkular-build-tools are used by both maven-checkstyle-plugin and lisense-plugin -->
-    <version.org.hawkular.hawkular-build-tools>11</version.org.hawkular.hawkular-build-tools>
+    <version.org.hawkular.hawkular-build-tools>12</version.org.hawkular.hawkular-build-tools>
 
     <!--
       Maven plugin versions
@@ -606,6 +606,12 @@
             <groupId>com.puppycrawl.tools</groupId>
             <artifactId>checkstyle</artifactId>
             <version>${version.com.puppycrawl.tools.checkstyle}</version>
+            <exclusions>
+              <exclusion>
+                <groupId>com.sun</groupId>
+                <artifactId>tools</artifactId>
+              </exclusion>
+            </exclusions>
           </dependency>
           <dependency>
             <groupId>org.hawkular</groupId>
