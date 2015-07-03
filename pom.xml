@@ -186,8 +186,8 @@
       the proper versions for version.org.jboss.jboss-dmr and version.org.jboss.msc and others above since
       those aren't in the BOM so we need to track them ourselves.
     -->
-    <version.org.wildfly>9.0.0.CR2</version.org.wildfly>
-    <version.org.wildfly.core>1.0.0.CR6</version.org.wildfly.core>
+    <version.org.wildfly>9.0.0.Final</version.org.wildfly>
+    <version.org.wildfly.core>1.0.0.Final</version.org.wildfly.core>
   </properties>
 
   <dependencyManagement>
@@ -476,6 +476,9 @@
           <groupId>org.wildfly.plugins</groupId>
           <artifactId>wildfly-maven-plugin</artifactId>
           <version>${version.wildfly-maven-plugin}</version>
+          <configuration>
+            <version>${version.org.wildfly}</version>
+          </configuration>
         </plugin>
 
         <plugin>
