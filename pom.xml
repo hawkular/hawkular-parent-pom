@@ -516,6 +516,7 @@
             <cql>DOUBLEDASHES_STYLE</cql>
             <Dockerfile>SCRIPT_STYLE</Dockerfile>
             <drl>SLASHSTAR_STYLE</drl>
+            <editorconfig>SCRIPT_STYLE</editorconfig>
             <g4>SLASHSTAR_STYLE</g4>
             <gradle>SLASHSTAR_STYLE</gradle>
             <gradlew>SCRIPT_STYLE</gradlew>
