@@ -164,6 +164,8 @@
       Ordering: alphabetic
     -->
     <version.com.datastax.cassandra>2.1.6</version.com.datastax.cassandra>
+    <!-- keep in sync with modules/system/layers/base/com/fasterxml/jackson/core of the current WildFly/EAP -->
+    <version.com.fasterxml.jackson.core>2.5.1</version.com.fasterxml.jackson.core>
     <version.com.google.code.gson>2.2.4</version.com.google.code.gson>
     <version.com.google.guava>16.0.1</version.com.google.guava>
     <version.com.wordnik.swagger>1.3.12</version.com.wordnik.swagger>
@@ -204,6 +206,22 @@
         <groupId>com.datastax.cassandra</groupId>
         <artifactId>cassandra-driver-core</artifactId>
         <version>${version.com.datastax.cassandra}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${version.com.fasterxml.jackson.core}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${version.com.fasterxml.jackson.core}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${version.com.fasterxml.jackson.core}</version>
       </dependency>
 
       <!-- Swagger REST annotations -->
