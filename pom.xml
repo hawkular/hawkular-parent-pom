@@ -184,6 +184,16 @@
       If you change wildfly versions, refer to the pom in org.wildfly.core:wildfly-core-parent to obtain
       the proper versions for version.org.jboss.jboss-dmr and version.org.jboss.msc and others above since
       those aren't in the BOM so we need to track them ourselves.
+
+      ${version.org.wildfly} can be used to import WildFly BoM in subprojects as follows:
+      <dependency>
+        <groupId>org.wildfly.bom</groupId>
+        <artifactId>jboss-javaee-7.0-wildfly</artifactId>
+        <version>${version.org.wildfly}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
     -->
     <version.org.wildfly>9.0.0.Final</version.org.wildfly>
     <version.org.wildfly.core>1.0.0.Final</version.org.wildfly.core>
@@ -270,15 +280,6 @@
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
         <version>${version.org.mockito}</version>
-      </dependency>
-
-      <!-- WildFly BOM - this also includes the org.jboss.spec:jboss-javaee-7.0 dependencies -->
-      <dependency>
-        <groupId>org.wildfly.bom</groupId>
-        <artifactId>jboss-javaee-7.0-wildfly</artifactId>
-        <version>${version.org.wildfly}</version>
-        <type>pom</type>
-        <scope>import</scope>
       </dependency>
 
     </dependencies>
