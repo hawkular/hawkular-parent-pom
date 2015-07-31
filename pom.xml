@@ -98,6 +98,42 @@
     <checkstyle.configLocation>hawkular-checkstyle/checkstyle.xml</checkstyle.configLocation>
     <checkstyle.consoleOutput>true</checkstyle.consoleOutput>
     <checkstyle.failOnError>true</checkstyle.failOnError>
+    <hawkular.checkstyle.includes>
+      src/**/*.java,
+      *.xml,
+      src/**/*.xml,
+      src/**/*.js,
+      *.adoc,
+      src/**/*.adoc,
+      *.conf,
+      src/**/*.conf,
+      src/**/*.cql,
+      src/**/*.css,
+      Dockerfile,
+      src/**/Dockerfile,
+      src/**/*.groovy,
+      *.html,
+      src/**/*.html,
+      src/**/*.json,
+      src/**/*.js.map,
+      *.md,
+      src/**/*.md,
+      *.properties,
+      src/**/*.properties,
+      *.sh,
+      src/**/*.sh,
+      *.txt,
+      src/**/*.txt,
+      src/**/*.xsl,
+      *.yml,
+      src/**/*.yml,
+      src/**/*.yaml,
+    </hawkular.checkstyle.includes>
+    <hawkular.checkstyle.excludes>
+      release.properties,
+      **/*.d.ts,
+      **/vendor/*.js,
+    </hawkular.checkstyle.excludes>
     <!-- the default value pointing at suppressions.xml in hawkular-build-tools -->
     <checkstyle.suppressions.file>hawkular-checkstyle/suppressions.xml</checkstyle.suppressions.file>
 
@@ -565,41 +601,8 @@
                which pulls in also files from all submodules and target folders. We do not want
                that. We rather have to name specific root folder patterns like *.extension
                or directory/**/*.extension -->
-          <includes>
-            src/**/*.java,
-            *.xml,
-            src/**/*.xml,
-            src/**/*.js,
-            *.adoc,
-            src/**/*.adoc,
-            *.conf,
-            src/**/*.conf,
-            src/**/*.cql,
-            src/**/*.css,
-            Dockerfile,
-            src/**/Dockerfile,
-            src/**/*.groovy,
-            *.html,
-            src/**/*.html,
-            src/**/*.json,
-            src/**/*.js.map,
-            *.md,
-            src/**/*.md,
-            *.properties,
-            src/**/*.properties,
-            *.sh,
-            src/**/*.sh,
-            *.txt,
-            src/**/*.txt,
-            src/**/*.xsl,
-            *.yml,
-            src/**/*.yml,
-            src/**/*.yaml,
-          </includes>
-          <excludes>
-            release.properties,
-            **/*.d.ts,
-          </excludes>
+          <includes>${hawkular.checkstyle.includes}</includes>
+          <excludes>${hawkular.checkstyle.excludes}</excludes>
           <!-- to override in a submodule, just redefine the checkstyle.suppressions.file property
                in the given submodule's pom -->
           <suppressionsLocation>${checkstyle.suppressions.file}</suppressionsLocation>
