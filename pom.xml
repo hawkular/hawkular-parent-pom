@@ -541,6 +541,7 @@
             <exclude>**/README</exclude>
             <exclude>**/README.*</exclude>
             <exclude>**/.travis.force.build</exclude>
+            <exclude>**/*.adoc</exclude>
             <exclude>**/*.d.ts</exclude>
             <exclude>**/*.eot</exclude>
             <exclude>**/*.otf</exclude>
