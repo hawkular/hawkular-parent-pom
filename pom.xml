@@ -554,6 +554,7 @@
           <mapping>
             <conf>SCRIPT_STYLE</conf>
             <cql>DOUBLEDASHES_STYLE</cql>
+            <css>SLASHSTAR_STYLE</css>
             <Dockerfile>SCRIPT_STYLE</Dockerfile>
             <drl>SLASHSTAR_STYLE</drl>
             <editorconfig>SCRIPT_STYLE</editorconfig>
