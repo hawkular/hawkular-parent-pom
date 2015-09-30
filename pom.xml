@@ -203,7 +203,7 @@
     <version.org.codehaus.gmavenplus.gmavenplus-plugin>1.2</version.org.codehaus.gmavenplus.gmavenplus-plugin>
     <version.org.codehaus.mojo.xml-maven-plugin>1.0</version.org.codehaus.mojo.xml-maven-plugin>
     <version.srcdeps-maven-plugin>0.0.5</version.srcdeps-maven-plugin>
-    <version.wildfly-maven-plugin>1.1.0.Alpha3</version.wildfly-maven-plugin>
+    <version.wildfly-maven-plugin>1.1.0.Alpha4</version.wildfly-maven-plugin>
     <version.wildfly-extension-maven-plugin>0.6.0</version.wildfly-extension-maven-plugin>
 
     <!-- Repository Deployment URLs -->
