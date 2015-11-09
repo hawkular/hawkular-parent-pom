@@ -883,6 +883,12 @@
             </requireJavaVersion>
             <requireNoRepositories />
             <requirePluginVersions />
+            <requireProperty>
+              <property>project.version</property>
+              <message>"Project version must be specified."</message>
+              <regex>.*(\d|-SNAPSHOT|\.Final)$</regex>
+              <regexMessage>"Project version must end in a number, -SNAPSHOT or .Final"</regexMessage>
+            </requireProperty>
           </rules>
         </configuration>
       </plugin>
