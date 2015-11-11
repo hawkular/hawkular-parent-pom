@@ -208,6 +208,9 @@
     <version.wildfly-maven-plugin>1.1.0.Alpha4</version.wildfly-maven-plugin>
     <version.wildfly-extension-maven-plugin>0.6.0</version.wildfly-extension-maven-plugin>
 
+    <!-- wildfly-server-provisioning-maven-plugin and wildfly-feature-pack-build-maven-plugin -->
+    <version.org.wildfly.build>1.1.0.Final</version.org.wildfly.build>
+
     <!-- Repository Deployment URLs -->
     <jboss.nexus.base.url>https://repository.jboss.org/nexus</jboss.nexus.base.url>
     <jboss.releases.repo.url>${jboss.nexus.base.url}/service/local/staging/deploy/maven2/</jboss.releases.repo.url>
@@ -646,9 +649,22 @@
                   <selector>org.keycloak</selector>
                 </selectors>
                 <url>${keycloak.scm.url}</url>
+                <profiles>distribution</profiles>
               </repository>
             </repositories>
           </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.wildfly.build</groupId>
+          <artifactId>wildfly-feature-pack-build-maven-plugin</artifactId>
+          <version>${version.org.wildfly.build}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.wildfly.build</groupId>
+          <artifactId>wildfly-server-provisioning-maven-plugin</artifactId>
+          <version>${version.org.wildfly.build}</version>
         </plugin>
 
         <plugin>
