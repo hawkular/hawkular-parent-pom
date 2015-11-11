@@ -163,6 +163,7 @@
     <cmdgw.scm.url>scm:git:https://github.com/hawkular/hawkular-command-gateway.git</cmdgw.scm.url>
     <inventory.scm.url>scm:git:https://github.com/hawkular/hawkular-inventory.git</inventory.scm.url>
     <metrics.scm.url>scm:git:https://github.com/hawkular/hawkular-metrics.git</metrics.scm.url>
+    <cassandraunit.scm.url>scm:git:https://github.com/jpkrohling/cassandra-unit.git</cassandraunit.scm.url>
     <srcdeps.quiet>true</srcdeps.quiet>
     <srcdeps.skipTests>true</srcdeps.skipTests>
 
@@ -629,6 +630,13 @@
                   <selector>org.hawkular.metrics</selector>
                 </selectors>
                 <url>${metrics.scm.url}</url>
+              </repository>
+              <repository>
+                <id>cassandraunit</id>
+                <selectors>
+                  <selector>org.cassandraunit</selector>
+                </selectors>
+                <url>${cassandraunit.scm.url}</url>
               </repository>
             </repositories>
           </configuration>
