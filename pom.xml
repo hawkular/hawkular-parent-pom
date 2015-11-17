@@ -22,7 +22,7 @@
 
   <groupId>org.hawkular</groupId>
   <artifactId>hawkular-parent</artifactId>
-  <version>26</version>
+  <version>27-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Hawkular Parent</name>
@@ -62,7 +62,7 @@
     <connection>scm:git:git@github.com:hawkular/hawkular-parent-pom.git</connection>
     <developerConnection>scm:git:git@github.com:hawkular/hawkular-parent-pom.git</developerConnection>
     <url>https://github.com/hawkular/hawkular-parent-pom</url>
-    <tag>26</tag>
+    <tag>head</tag>
   </scm>
   <issueManagement>
     <system>jira</system>
