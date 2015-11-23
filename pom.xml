@@ -883,6 +883,13 @@
             </requireJavaVersion>
             <requireNoRepositories />
             <requirePluginVersions />
+            <requireProperty>
+              <!-- stronger version of https://developer.jboss.org/wiki/JBossProjectVersioning -->
+              <property>project.version</property>
+              <message>Project version must be specified.</message>
+              <regex>^(\d{1,4})(\.\d{1,3})?(\.\d{1,3})?(\.Alpha\d{1,2}|\.Beta\d{1,2}|\.CR\d{1,2}|\.Final)?(-SNAPSHOT|-SRC-.*)?$</regex>
+              <regexMessage>Project version must be in the form of one of the following (x,y,z stands for any numbers): "x", "x.y", "x.y.z".There may be also a qualifier at the end. Qualifier can be one of the following: ".AlphaX", ".BetaX", ".CRX", ".Final", where X denotes a number. And there may be also "-SNAPSHOT" at the very end.</regexMessage>
+            </requireProperty>
           </rules>
         </configuration>
       </plugin>
