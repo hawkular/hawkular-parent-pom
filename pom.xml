@@ -883,6 +883,7 @@
             </requireJavaVersion>
             <requireNoRepositories />
             <requirePluginVersions />
+            <dependencyConvergence />
             <requireProperty>
               <!-- stronger version of https://developer.jboss.org/wiki/JBossProjectVersioning -->
               <property>project.version</property>
