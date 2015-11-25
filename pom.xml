@@ -137,6 +137,11 @@
     <!-- the default value pointing at suppressions.xml in hawkular-build-tools -->
     <checkstyle.suppressions.file>hawkular-checkstyle/suppressions.xml</checkstyle.suppressions.file>
 
+    <!-- maven-enforcer-plugin -->
+    <!-- Note that ${enforcer.project.version.pattern} has a stricter variant in the release profile -->
+    <enforcer.project.version.pattern>^(\d{1,4})(\.\d{1,3}\.\d{1,3}(\.Alpha\d{1,2}|\.Beta\d{1,2}|\.CR\d{1,2}|\.Final))?(-SNAPSHOT|-SRC-.*)?$</enforcer.project.version.pattern>
+    <enforcer.project.version.message>Project version must be in the form of one of the following (x,y,z stands for any numbers): "x", "x.y", "x.y.z". There may be also a qualifier at the end. Qualifier can be one of the following: ".AlphaX", ".BetaX", ".CRX", ".Final", where X denotes a number. And there may be also "-SNAPSHOT" or -SRC-.* at the very end.</enforcer.project.version.message>
+
     <!-- license-maven-plugin -->
     <license.headerTemplatePath>hawkular-license/jboss-apache-2-template.txt</license.headerTemplatePath>
     <license.failIfMissing>true</license.failIfMissing>
@@ -943,8 +948,8 @@
               <!-- stronger version of https://developer.jboss.org/wiki/JBossProjectVersioning -->
               <property>project.version</property>
               <message>Project version must be specified.</message>
-              <regex>^(\d{1,4})(\.\d{1,3})?(\.\d{1,3})?(\.Alpha\d{1,2}|\.Beta\d{1,2}|\.CR\d{1,2}|\.Final)?(-SNAPSHOT|-SRC-.*)?$</regex>
-              <regexMessage>Project version must be in the form of one of the following (x,y,z stands for any numbers): "x", "x.y", "x.y.z".There may be also a qualifier at the end. Qualifier can be one of the following: ".AlphaX", ".BetaX", ".CRX", ".Final", where X denotes a number. And there may be also "-SNAPSHOT" at the very end.</regexMessage>
+              <regex>${enforcer.project.version.pattern}</regex>
+              <regexMessage>${enforcer.project.version.message}</regexMessage>
             </requireProperty>
           </rules>
         </configuration>
@@ -1057,7 +1062,13 @@
       <properties>
         <!-- This makes the buildnumber-maven-plugin fail in case of uncommitted local changes -->
         <maven.buildNumber.doCheck>true</maven.buildNumber.doCheck>
+
+        <!-- maven-enforcer-plugin -->
+        <enforcer.project.version.pattern>^(\d{1,4})(\.\d{1,3})?(\.\d{1,3})?(\.Alpha\d{1,2}|\.Beta\d{1,2}|\.CR\d{1,2}|\.Final)?$</enforcer.project.version.pattern>
+        <enforcer.project.version.message>Project version must be in the form of one of the following (x,y,z stands for any numbers): "x", "x.y", "x.y.z". There may be also a qualifier at the end. Qualifier can be one of the following: ".AlphaX", ".BetaX", ".CRX", ".Final", where X denotes a number.</enforcer.project.version.message>
+
       </properties>
+
       <build>
         <plugins>
           <plugin>
