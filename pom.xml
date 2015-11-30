@@ -665,7 +665,15 @@
                   <selector>org.keycloak</selector>
                 </selectors>
                 <url>${keycloak.scm.url}</url>
-                <profiles>distribution</profiles>
+                <buildArgs>
+                  <buildArg>-Pdistribution</buildArg>
+                  <buildArg>-Dwildfly.version=${version.org.wildfly}</buildArg>
+                  <buildArg>-Dwildfly.core.version=${version.org.wildfly.core}</buildArg>
+                  <buildArg>-Dwildfly.build-tools.version=${version.org.wildfly.build}</buildArg>
+                  <buildArg>--projects</buildArg>
+                  <buildArg>distribution/feature-packs/adapter-feature-pack,distribution/feature-packs/server-feature-pack</buildArg>
+                  <buildArg>--also-make</buildArg>
+                </buildArgs>
               </repository>
             </repositories>
           </configuration>
