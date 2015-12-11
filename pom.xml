@@ -583,11 +583,11 @@
                   <selector>org.hawkular.hawkular</selector>
                 </selectors>
                 <url>${hawkular.scm.url}</url>
-                <properties>
-                  <license.skip>true</license.skip>
-                  <revapi.skip>true</revapi.skip>
-                  <checkstyle.skip>true</checkstyle.skip>
-                </properties>
+                <buildArgs>
+                  <buildArg>-Dcheckstyle.skip=true</buildArg>
+                  <buildArg>-Dlicense.skip=true</buildArg>
+                  <buildArg>-Drevapi.skip=true</buildArg>
+                </buildArgs>
               </repository>
               <repository>
                 <id>accounts</id>
@@ -595,11 +595,11 @@
                   <selector>org.hawkular.accounts</selector>
                 </selectors>
                 <url>${accounts.scm.url}</url>
-                <properties>
-                  <license.skip>true</license.skip>
-                  <revapi.skip>true</revapi.skip>
-                  <checkstyle.skip>true</checkstyle.skip>
-                </properties>
+                <buildArgs>
+                  <buildArg>-Dcheckstyle.skip=true</buildArg>
+                  <buildArg>-Dlicense.skip=true</buildArg>
+                  <buildArg>-Drevapi.skip=true</buildArg>
+                </buildArgs>
               </repository>
               <repository>
                 <id>agent</id>
@@ -607,11 +607,11 @@
                   <selector>org.hawkular.agent</selector>
                 </selectors>
                 <url>${agent.scm.url}</url>
-                <properties>
-                  <license.skip>true</license.skip>
-                  <revapi.skip>true</revapi.skip>
-                  <checkstyle.skip>true</checkstyle.skip>
-                </properties>
+                <buildArgs>
+                  <buildArg>-Dcheckstyle.skip=true</buildArg>
+                  <buildArg>-Dlicense.skip=true</buildArg>
+                  <buildArg>-Drevapi.skip=true</buildArg>
+                </buildArgs>
               </repository>
               <repository>
                 <id>alerts</id>
@@ -619,11 +619,11 @@
                   <selector>org.hawkular.alerts</selector>
                 </selectors>
                 <url>${alerts.scm.url}</url>
-                <properties>
-                  <license.skip>true</license.skip>
-                  <revapi.skip>true</revapi.skip>
-                  <checkstyle.skip>true</checkstyle.skip>
-                </properties>
+                <buildArgs>
+                  <buildArg>-Dcheckstyle.skip=true</buildArg>
+                  <buildArg>-Dlicense.skip=true</buildArg>
+                  <buildArg>-Drevapi.skip=true</buildArg>
+                </buildArgs>
               </repository>
               <repository>
                 <id>btm</id>
@@ -631,11 +631,11 @@
                   <selector>org.hawkular.btm</selector>
                 </selectors>
                 <url>${btm.scm.url}</url>
-                <properties>
-                  <license.skip>true</license.skip>
-                  <revapi.skip>true</revapi.skip>
-                  <checkstyle.skip>true</checkstyle.skip>
-                </properties>
+                <buildArgs>
+                  <buildArg>-Dcheckstyle.skip=true</buildArg>
+                  <buildArg>-Dlicense.skip=true</buildArg>
+                  <buildArg>-Drevapi.skip=true</buildArg>
+                </buildArgs>
               </repository>
               <repository>
                 <id>commons</id>
@@ -643,11 +643,11 @@
                   <selector>org.hawkular.commons</selector>
                 </selectors>
                 <url>${commons.scm.url}</url>
-                <properties>
-                  <license.skip>true</license.skip>
-                  <revapi.skip>true</revapi.skip>
-                  <checkstyle.skip>true</checkstyle.skip>
-                </properties>
+                <buildArgs>
+                  <buildArg>-Dcheckstyle.skip=true</buildArg>
+                  <buildArg>-Dlicense.skip=true</buildArg>
+                  <buildArg>-Drevapi.skip=true</buildArg>
+                </buildArgs>
               </repository>
               <repository>
                 <id>cmdgw</id>
@@ -655,11 +655,11 @@
                   <selector>org.hawkular.cmdgw</selector>
                 </selectors>
                 <url>${cmdgw.scm.url}</url>
-                <properties>
-                  <license.skip>true</license.skip>
-                  <revapi.skip>true</revapi.skip>
-                  <checkstyle.skip>true</checkstyle.skip>
-                </properties>
+                <buildArgs>
+                  <buildArg>-Dcheckstyle.skip=true</buildArg>
+                  <buildArg>-Dlicense.skip=true</buildArg>
+                  <buildArg>-Drevapi.skip=true</buildArg>
+                </buildArgs>
               </repository>
               <repository>
                 <id>inventory</id>
@@ -667,11 +667,11 @@
                   <selector>org.hawkular.inventory</selector>
                 </selectors>
                 <url>${inventory.scm.url}</url>
-                <properties>
-                  <license.skip>true</license.skip>
-                  <revapi.skip>true</revapi.skip>
-                  <checkstyle.skip>true</checkstyle.skip>
-                </properties>
+                <buildArgs>
+                  <buildArg>-Dcheckstyle.skip=true</buildArg>
+                  <buildArg>-Dlicense.skip=true</buildArg>
+                  <buildArg>-Drevapi.skip=true</buildArg>
+                </buildArgs>
               </repository>
               <repository>
                 <id>metrics</id>
@@ -679,11 +679,11 @@
                   <selector>org.hawkular.metrics</selector>
                 </selectors>
                 <url>${metrics.scm.url}</url>
-                <properties>
-                  <license.skip>true</license.skip>
-                  <revapi.skip>true</revapi.skip>
-                  <checkstyle.skip>true</checkstyle.skip>
-                </properties>
+                <buildArgs>
+                  <buildArg>-Dcheckstyle.skip=true</buildArg>
+                  <buildArg>-Dlicense.skip=true</buildArg>
+                  <buildArg>-Drevapi.skip=true</buildArg>
+                </buildArgs>
               </repository>
               <repository>
                 <id>keycloak</id>
