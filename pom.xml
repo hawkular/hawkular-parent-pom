@@ -250,7 +250,6 @@
     <!-- keep in sync with version.org.wildfly.core -->
     <version.org.jboss.msc>1.2.6.Final</version.org.jboss.msc>
 
-    <version.org.keycloak>1.6.1.Final</version.org.keycloak>
     <version.org.mockito>1.10.19</version.org.mockito>
     <version.org.testng>6.9.6</version.org.testng>
 
