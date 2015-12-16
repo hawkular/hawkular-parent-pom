@@ -269,7 +269,7 @@
 
     -->
     <version.org.wildfly>10.0.0.CR4</version.org.wildfly>
-    <version.org.wildfly.core>2.0.0.CR8</version.org.wildfly.core>
+    <wildfly.core.version>2.0.1.Final</wildfly.core.version>
   </properties>
 
   <dependencyManagement>
