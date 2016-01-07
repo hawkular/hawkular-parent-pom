@@ -209,7 +209,7 @@
     <version.wildfly-extension-maven-plugin>0.6.0</version.wildfly-extension-maven-plugin>
 
     <!-- wildfly-server-provisioning-maven-plugin and wildfly-feature-pack-build-maven-plugin -->
-    <version.org.wildfly.build>1.1.1.Final</version.org.wildfly.build>
+    <version.org.wildfly.build>1.1.2.Final</version.org.wildfly.build>
 
     <!-- Repository Deployment URLs -->
     <jboss.nexus.base.url>https://repository.jboss.org/nexus</jboss.nexus.base.url>
