@@ -206,7 +206,7 @@
     <version.org.codehaus.mojo.build-helper-maven-plugin>1.10</version.org.codehaus.mojo.build-helper-maven-plugin>
     <version.org.codehaus.mojo.xml-maven-plugin>1.0.1</version.org.codehaus.mojo.xml-maven-plugin>
     <version.srcdeps-maven-plugin>0.0.11</version.srcdeps-maven-plugin>
-    <version.wildfly-maven-plugin>1.1.0.Alpha4</version.wildfly-maven-plugin>
+    <version.wildfly-maven-plugin>1.1.0.Alpha5</version.wildfly-maven-plugin>
     <version.wildfly-extension-maven-plugin>0.6.0</version.wildfly-extension-maven-plugin>
 
     <!-- wildfly-server-provisioning-maven-plugin and wildfly-feature-pack-build-maven-plugin -->
