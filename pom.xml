@@ -101,6 +101,8 @@
     <checkstyle.failOnError>true</checkstyle.failOnError>
     <hawkular.checkstyle.includes>
       src/**/*.java,
+      *.xml,
+      src/**/*.xml,
       src/**/*.js,
       *.adoc,
       src/**/*.adoc,
@@ -111,6 +113,8 @@
       Dockerfile,
       src/**/Dockerfile,
       src/**/*.groovy,
+      *.html,
+      src/**/*.html,
       src/**/*.json,
       src/**/*.js.map,
       *.md,
@@ -123,7 +127,8 @@
       src/**/*.txt,
       *.yml,
       src/**/*.yml,
-      src/**/*.yaml,
+        src/**/*.xsl,
+    src/**/*.yaml,
     </hawkular.checkstyle.includes>
     <hawkular.checkstyle.excludes>
       release.properties,
@@ -1000,19 +1005,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>xml-maven-plugin</artifactId>
-        <configuration>
-          <formatFileSets>
-            <!-- *.xml and *.xsl are included by default -->
-            <formatFileSet>
-              <directory>${basedir}</directory>
-              <includes>
-                <include>*.html</include>
-                <include>src/**/*.html</include>
-                <!-- do not add includes staring with ** unless you want to include all submodules and their target dirs -->
-              </includes>
-            </formatFileSet>
-          </formatFileSets>
-        </configuration>
+        <!-- *.xml and *.xsl are included by default -->
         <executions>
           <execution>
             <id>xml-check-format</id>
