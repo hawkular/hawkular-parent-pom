@@ -166,6 +166,7 @@
     <btm.scm.url>scm:git:https://github.com/hawkular/hawkular-btm.git</btm.scm.url>
     <commons.scm.url>scm:git:https://github.com/hawkular/hawkular-commons.git</commons.scm.url>
     <cmdgw.scm.url>scm:git:https://github.com/hawkular/hawkular-command-gateway.git</cmdgw.scm.url>
+    <datamining.scm.url>scm:git:https://github.com/hawkular/hawkular-datamining.git</datamining.scm.url>
     <inventory.scm.url>scm:git:https://github.com/hawkular/hawkular-inventory.git</inventory.scm.url>
     <metrics.scm.url>scm:git:https://github.com/hawkular/hawkular-metrics.git</metrics.scm.url>
     <keycloak.scm.url>scm:git:https://github.com/keycloak/keycloak.git</keycloak.scm.url>
@@ -680,6 +681,18 @@
                   <selector>org.hawkular.cmdgw</selector>
                 </selectors>
                 <url>${cmdgw.scm.url}</url>
+                <buildArgs>
+                  <buildArg>-Dcheckstyle.skip=true</buildArg>
+                  <buildArg>-Dlicense.skip=true</buildArg>
+                  <buildArg>-Drevapi.skip=true</buildArg>
+                </buildArgs>
+              </repository>
+              <repository>
+                <id>datamining</id>
+                <selectors>
+                  <selector>org.hawkular.datamining</selector>
+                </selectors>
+                <url>${datamining.scm.url}</url>
                 <buildArgs>
                   <buildArg>-Dcheckstyle.skip=true</buildArg>
                   <buildArg>-Dlicense.skip=true</buildArg>
