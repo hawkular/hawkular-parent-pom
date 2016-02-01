@@ -257,8 +257,6 @@
     <!-- keep in sync with version.org.wildfly.core -->
     <version.org.jboss.msc>1.2.6.Final</version.org.jboss.msc>
 
-    <version.org.keycloak.secretstore>1.0.10.Final</version.org.keycloak.secretstore>
-
     <version.org.mockito>1.10.19</version.org.mockito>
     <version.org.testng>6.9.6</version.org.testng>
 
@@ -368,12 +366,6 @@
         <groupId>org.jboss.msc</groupId>
         <artifactId>jboss-msc</artifactId>
         <version>${version.org.jboss.msc}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.keycloak.secretstore</groupId>
-        <artifactId>secret-store-undertow-filter</artifactId>
-        <version>${version.org.keycloak.secretstore}</version>
       </dependency>
 
       <dependency>
