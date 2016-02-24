@@ -254,7 +254,7 @@
     <version.org.jboss.msc>1.2.6.Final</version.org.jboss.msc>
 
     <version.org.mockito>1.10.19</version.org.mockito>
-    <version.org.testng>6.9.6</version.org.testng>
+    <version.org.testng>6.9.10</version.org.testng>
 
     <!--
       If you change wildfly versions, refer to the pom in org.wildfly.core:wildfly-core-parent to obtain
