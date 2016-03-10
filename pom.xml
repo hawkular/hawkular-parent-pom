@@ -993,21 +993,6 @@
       </plugin>
 
       <plugin>
-        <groupId>org.codehaus.gmavenplus</groupId>
-        <artifactId>gmavenplus-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>addSources</goal>
-              <goal>addTestSources</goal>
-              <goal>compile</goal>
-              <goal>testCompile</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>xml-maven-plugin</artifactId>
         <!-- *.xml and *.xsl are included by default -->
@@ -1169,6 +1154,35 @@
       </properties>
     </profile>
 
+    <!-- Maven modules containing Groovy classes have to activate this profile by adding
+      <test.groovy>true</test.groovy> to their properties. -->
+    <profile>
+      <id>test.groovy</id>
+      <activation>
+        <property>
+          <name>test.groovy</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.gmavenplus</groupId>
+            <artifactId>gmavenplus-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>addSources</goal>
+                  <goal>addTestSources</goal>
+                  <goal>compile</goal>
+                  <goal>testCompile</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
 
   </profiles>
 </project>
