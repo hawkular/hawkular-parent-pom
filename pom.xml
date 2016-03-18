@@ -234,7 +234,8 @@
     <version.com.datastax.cassandra>3.0.0</version.com.datastax.cassandra>
     <!-- keep in sync with modules/system/layers/base/com/fasterxml/jackson/core of the current WildFly/EAP -->
     <version.com.fasterxml.jackson.core>2.5.4</version.com.fasterxml.jackson.core>
-    <version.com.google.guava>16.0.1</version.com.google.guava>
+    <!-- keep in sync with modules/system/layers/base/com/google/guava of the current WildFly/EAP -->
+    <version.com.google.guava>18.0</version.com.google.guava>
     <version.com.wordnik.swagger>1.3.13</version.com.wordnik.swagger>
     <version.io.gatling.highcharts>2.1.6</version.io.gatling.highcharts>
     <version.org.codehaus.groovy>2.4.6</version.org.codehaus.groovy>
@@ -307,6 +308,12 @@
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
         <version>${version.com.fasterxml.jackson.core}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${version.com.google.guava}</version>
       </dependency>
 
       <!-- Swagger REST annotations -->
