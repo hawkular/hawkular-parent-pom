@@ -562,6 +562,7 @@
           <version>${version.maven-surefire-plugin}</version>
           <configuration>
             <argLine>-Xmx512m</argLine>
+            <trimStackTrace>false</trimStackTrace>
           </configuration>
         </plugin>
 
@@ -1166,10 +1167,9 @@
     <profile>
       <id>test.groovy</id>
       <activation>
-        <property>
-          <name>test.groovy</name>
-          <value>true</value>
-        </property>
+        <file>
+          <exists>${basedir}/src/test/groovy</exists>
+        </file>
       </activation>
       <build>
         <plugins>
