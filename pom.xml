@@ -246,7 +246,7 @@
     <version.org.hamcrest>1.3</version.org.hamcrest>
     <version.junit>4.12</version.junit>
     <!-- keep in sync with version.com.datastax.cassandra -->
-    <version.org.apache.cassandra>3.3</version.org.apache.cassandra>
+    <version.org.apache.cassandra>3.4</version.org.apache.cassandra>
 
     <!-- Note that we are maintaining only the version here rather than e.g. importing arquillian-bom -->
     <version.org.jboss.arquillian>1.1.10.Final</version.org.jboss.arquillian>
