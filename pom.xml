@@ -266,11 +266,11 @@
       the proper versions for version.org.jboss.jboss-dmr and version.org.jboss.msc and others above since
       those aren't in the BOM so we need to track them ourselves.
 
-      ${version.org.wildfly} can be used to import WildFly BoM in subprojects as follows:
+      ${version.org.wildfly.bom} can be used to import WildFly BoM in subprojects as follows:
       <dependency>
         <groupId>org.wildfly.bom</groupId>
         <artifactId>wildfly-javaee7</artifactId>
-        <version>${version.org.wildfly}</version>
+        <version>${version.org.wildfly.bom}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -278,6 +278,7 @@
     -->
     <version.org.wildfly>10.0.0.Final</version.org.wildfly>
     <version.org.wildfly.core>2.0.10.Final</version.org.wildfly.core>
+    <version.org.wildfly.bom>10.0.1.Final</version.org.wildfly.bom>
   </properties>
 
   <dependencyManagement>
