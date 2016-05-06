@@ -236,6 +236,7 @@
     <version.com.fasterxml.jackson.core>2.5.4</version.com.fasterxml.jackson.core>
     <!-- keep in sync with modules/system/layers/base/com/google/guava of the current WildFly/EAP -->
     <version.com.google.guava>18.0</version.com.google.guava>
+    <version.com.squareup.okhttp>2.7.5</version.com.squareup.okhttp>
     <!-- com.wordnik is deprecated. Use io.swagger instead. -->
     <version.com.wordnik.swagger>1.3.13</version.com.wordnik.swagger>
     <version.io.gatling.highcharts>2.1.6</version.io.gatling.highcharts>
@@ -317,6 +318,18 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
         <version>${version.com.google.guava}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.squareup.okhttp</groupId>
+        <artifactId>okhttp</artifactId>
+        <version>${version.com.squareup.okhttp}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.squareup.okhttp</groupId>
+        <artifactId>okhttp-ws</artifactId>
+        <version>${version.com.squareup.okhttp}</version>
       </dependency>
 
       <!-- Swagger REST annotations -->
