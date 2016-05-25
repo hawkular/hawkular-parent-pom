@@ -827,6 +827,9 @@
             <exclude>**/*.woff</exclude>
             <exclude>**/*.html</exclude>
             <exclude>**/*.htm</exclude>
+            <exclude>**/*.keystore</exclude>
+            <exclude>**/*.truststore</exclude>
+            <exclude>**/*.jks</exclude>
           </excludes>
           <mapping>
             <conf>SCRIPT_STYLE</conf>
