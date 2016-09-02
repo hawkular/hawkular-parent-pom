@@ -127,8 +127,12 @@
       src/**/*.txt,
       *.yml,
       src/**/*.yml,
-        src/**/*.xsl,
-    src/**/*.yaml,
+      src/**/*.xsl,
+      src/**/*.yaml,
+      Gemfile,
+      Gemfile.lock,
+      config.ru
+      *.rb
     </hawkular.checkstyle.includes>
     <hawkular.checkstyle.excludes>
       release.properties,
