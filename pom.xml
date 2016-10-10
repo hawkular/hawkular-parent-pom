@@ -246,6 +246,8 @@
     <version.io.gatling.highcharts>2.1.6</version.io.gatling.highcharts>
     <version.io.reactive>1.1.7</version.io.reactive>
     <version.io.swagger>1.5.8</version.io.swagger>
+    <!-- keep in sync with modules/system/layers/base/org/joda/time of the current WildFly/EAP -->
+    <version.joda-time>2.7.0</version.joda-time>
     <version.org.apache.commons.commons-lang3>3.3.1</version.org.apache.commons.commons-lang3>
     <version.org.codehaus.groovy>2.4.6</version.org.codehaus.groovy>
     <version.org.codehaus.groovy.modules.http-builder>0.7.1</version.org.codehaus.groovy.modules.http-builder>
@@ -253,8 +255,6 @@
       We need to manage org.hamcrest explicitly, because we use the matchers also in TestNG tests and TestNG
       stopped depending on org.hamcrest -->
     <version.org.hamcrest>1.3</version.org.hamcrest>
-    <!-- keep in sync with modules/system/layers/base/org/joda/time of the current WildFly/EAP -->
-    <version.joda-time>2.7.0</version.joda-time>
     <version.junit>4.12</version.junit>
     <!-- keep in sync with version.com.datastax.cassandra -->
     <version.org.apache.cassandra>3.5</version.org.apache.cassandra>
@@ -403,6 +403,12 @@
       </dependency>
 
       <dependency>
+        <groupId>joda-time</groupId>
+        <artifactId>joda-time</artifactId>
+        <version>${version.joda-time}</version>
+      </dependency>
+
+      <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>${version.junit}</version>
@@ -429,12 +435,6 @@
         <groupId>org.hamcrest</groupId>
         <artifactId>hamcrest-core</artifactId>
         <version>${version.org.hamcrest}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>joda-time</groupId>
-        <artifactId>joda-time</artifactId>
-        <version>${version.joda-time}</version>
       </dependency>
 
       <dependency>
