@@ -236,17 +236,25 @@
     <version.com.fasterxml.jackson.core>2.5.4</version.com.fasterxml.jackson.core>
     <!-- keep in sync with modules/system/layers/base/com/google/guava of the current WildFly/EAP -->
     <version.com.google.guava>18.0</version.com.google.guava>
+    <version.com.google.protobuf>2.6.0</version.com.google.protobuf>
     <version.com.squareup.okhttp>2.7.5</version.com.squareup.okhttp>
     <!-- com.wordnik is deprecated. Use io.swagger instead. -->
     <version.com.wordnik.swagger>1.3.13</version.com.wordnik.swagger>
+    <!-- keep in sync with modules/system/layers/base/org/apache/commons/codec of the current WildFly/EAP -->
+    <version.commons-codec>1.10</version.commons-codec>
+    <version.commons-configuration>1.10</version.commons-configuration>
     <version.io.gatling.highcharts>2.1.6</version.io.gatling.highcharts>
+    <version.io.reactive>1.1.7</version.io.reactive>
     <version.io.swagger>1.5.8</version.io.swagger>
+    <version.org.apache.commons.commons-lang3>3.3.1</version.org.apache.commons.commons-lang3>
     <version.org.codehaus.groovy>2.4.6</version.org.codehaus.groovy>
     <version.org.codehaus.groovy.modules.http-builder>0.7.1</version.org.codehaus.groovy.modules.http-builder>
     <!-- Ideally the org.hamcrest should have the same version here as in junit.
       We need to manage org.hamcrest explicitly, because we use the matchers also in TestNG tests and TestNG
       stopped depending on org.hamcrest -->
     <version.org.hamcrest>1.3</version.org.hamcrest>
+    <!-- keep in sync with modules/system/layers/base/org/joda/time of the current WildFly/EAP -->
+    <version.joda-time>2.7.0</version.joda-time>
     <version.junit>4.12</version.junit>
     <!-- keep in sync with version.com.datastax.cassandra -->
     <version.org.apache.cassandra>3.5</version.org.apache.cassandra>
@@ -321,6 +329,12 @@
       </dependency>
 
       <dependency>
+        <groupId>com.google.protobuf</groupId>
+        <artifactId>protobuf-java</artifactId>
+        <version>${version.com.google.protobuf}</version>
+      </dependency>
+
+      <dependency>
         <groupId>com.squareup.okhttp</groupId>
         <artifactId>okhttp</artifactId>
         <version>${version.com.squareup.okhttp}</version>
@@ -347,9 +361,33 @@
       </dependency>
 
       <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>${version.commons-codec}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-configuration</groupId>
+        <artifactId>commons-configuration</artifactId>
+        <version>${version.commons-configuration}</version>
+      </dependency>
+
+      <dependency>
         <groupId>io.gatling.highcharts</groupId>
         <artifactId>gatling-charts-highcharts</artifactId>
         <version>${version.io.gatling.highcharts}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>io.reactive</groupId>
+        <artifactId>rxjava</artifactId>
+        <version>${version.io.reactive}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${version.org.apache.commons.commons-lang3}</version>
       </dependency>
 
       <!-- Swagger REST annotations -->
@@ -391,6 +429,12 @@
         <groupId>org.hamcrest</groupId>
         <artifactId>hamcrest-core</artifactId>
         <version>${version.org.hamcrest}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>joda-time</groupId>
+        <artifactId>joda-time</artifactId>
+        <version>${version.joda-time}</version>
       </dependency>
 
       <dependency>
