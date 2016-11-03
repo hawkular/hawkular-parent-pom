@@ -247,7 +247,7 @@
     <version.io.reactive>1.1.7</version.io.reactive>
     <version.io.swagger>1.5.8</version.io.swagger>
     <!-- keep in sync with modules/system/layers/base/org/joda/time of the current WildFly/EAP -->
-    <version.joda-time>2.7.0</version.joda-time>
+    <version.joda-time>2.7</version.joda-time>
     <version.org.apache.commons.commons-lang3>3.3.1</version.org.apache.commons.commons-lang3>
     <version.org.codehaus.groovy>2.4.6</version.org.codehaus.groovy>
     <version.org.codehaus.groovy.modules.http-builder>0.7.1</version.org.codehaus.groovy.modules.http-builder>
