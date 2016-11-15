@@ -154,25 +154,6 @@
     <!-- nexus-staging-maven-plugin -->
     <autoReleaseAfterClose>true</autoReleaseAfterClose>
 
-    <!--
-      srcdeps-maven-plugin
-      let's have the SCM URLs as propeties so that they can be switched
-      to local repos on command line when testing
-    -->
-    <hawkular.scm.url>scm:git:https://github.com/hawkular/hawkular.git</hawkular.scm.url>
-    <accounts.scm.url>scm:git:https://github.com/hawkular/hawkular-accounts.git</accounts.scm.url>
-    <agent.scm.url>scm:git:https://github.com/hawkular/hawkular-agent.git</agent.scm.url>
-    <alerts.scm.url>scm:git:https://github.com/hawkular/hawkular-alerts.git</alerts.scm.url>
-    <btm.scm.url>scm:git:https://github.com/hawkular/hawkular-btm.git</btm.scm.url>
-    <commons.scm.url>scm:git:https://github.com/hawkular/hawkular-commons.git</commons.scm.url>
-    <cmdgw.scm.url>scm:git:https://github.com/hawkular/hawkular-command-gateway.git</cmdgw.scm.url>
-    <datamining.scm.url>scm:git:https://github.com/hawkular/hawkular-datamining.git</datamining.scm.url>
-    <inventory.scm.url>scm:git:https://github.com/hawkular/hawkular-inventory.git</inventory.scm.url>
-    <metrics.scm.url>scm:git:https://github.com/hawkular/hawkular-metrics.git</metrics.scm.url>
-    <keycloak.scm.url>scm:git:https://github.com/keycloak/keycloak.git</keycloak.scm.url>
-    <srcdeps.quiet>true</srcdeps.quiet>
-    <srcdeps.skipTests>true</srcdeps.skipTests>
-
     <!-- hawkular-build-tools are used by both maven-checkstyle-plugin and lisense-plugin -->
     <version.org.hawkular.hawkular-build-tools>17</version.org.hawkular.hawkular-build-tools>
 
@@ -211,7 +192,6 @@
     <version.org.codehaus.gmavenplus.gmavenplus-plugin>1.5</version.org.codehaus.gmavenplus.gmavenplus-plugin>
     <version.org.codehaus.mojo.build-helper-maven-plugin>1.10</version.org.codehaus.mojo.build-helper-maven-plugin>
     <version.org.codehaus.mojo.xml-maven-plugin>1.0.1</version.org.codehaus.mojo.xml-maven-plugin>
-    <version.srcdeps-maven-plugin>0.0.11</version.srcdeps-maven-plugin>
     <version.wildfly-maven-plugin>1.1.0.Alpha11</version.wildfly-maven-plugin>
 
     <!-- wildfly-server-provisioning-maven-plugin and wildfly-feature-pack-build-maven-plugin -->
@@ -677,153 +657,6 @@
         </plugin>
 
         <plugin>
-          <groupId>org.l2x6.maven.srcdeps</groupId>
-          <artifactId>srcdeps-maven-plugin</artifactId>
-          <version>${version.srcdeps-maven-plugin}</version>
-          <extensions>true</extensions>
-          <configuration>
-            <repositories>
-              <repository>
-                <id>hawkular</id>
-                <selectors>
-                  <selector>org.hawkular.hawkular</selector>
-                </selectors>
-                <url>${hawkular.scm.url}</url>
-                <buildArgs>
-                  <buildArg>-Dcheckstyle.skip=true</buildArg>
-                  <buildArg>-Dlicense.skip=true</buildArg>
-                  <buildArg>-Drevapi.skip=true</buildArg>
-                </buildArgs>
-              </repository>
-              <repository>
-                <id>accounts</id>
-                <selectors>
-                  <selector>org.hawkular.accounts</selector>
-                </selectors>
-                <url>${accounts.scm.url}</url>
-                <buildArgs>
-                  <buildArg>-Dcheckstyle.skip=true</buildArg>
-                  <buildArg>-Dlicense.skip=true</buildArg>
-                  <buildArg>-Drevapi.skip=true</buildArg>
-                </buildArgs>
-              </repository>
-              <repository>
-                <id>agent</id>
-                <selectors>
-                  <selector>org.hawkular.agent</selector>
-                </selectors>
-                <url>${agent.scm.url}</url>
-                <buildArgs>
-                  <buildArg>-Dcheckstyle.skip=true</buildArg>
-                  <buildArg>-Dlicense.skip=true</buildArg>
-                  <buildArg>-Drevapi.skip=true</buildArg>
-                </buildArgs>
-              </repository>
-              <repository>
-                <id>alerts</id>
-                <selectors>
-                  <selector>org.hawkular.alerts</selector>
-                </selectors>
-                <url>${alerts.scm.url}</url>
-                <buildArgs>
-                  <buildArg>-Dcheckstyle.skip=true</buildArg>
-                  <buildArg>-Dlicense.skip=true</buildArg>
-                  <buildArg>-Drevapi.skip=true</buildArg>
-                </buildArgs>
-              </repository>
-              <repository>
-                <id>btm</id>
-                <selectors>
-                  <selector>org.hawkular.btm</selector>
-                </selectors>
-                <url>${btm.scm.url}</url>
-                <buildArgs>
-                  <buildArg>-Dcheckstyle.skip=true</buildArg>
-                  <buildArg>-Dlicense.skip=true</buildArg>
-                  <buildArg>-Drevapi.skip=true</buildArg>
-                </buildArgs>
-              </repository>
-              <repository>
-                <id>commons</id>
-                <selectors>
-                  <selector>org.hawkular.commons</selector>
-                </selectors>
-                <url>${commons.scm.url}</url>
-                <buildArgs>
-                  <buildArg>-Dcheckstyle.skip=true</buildArg>
-                  <buildArg>-Dlicense.skip=true</buildArg>
-                  <buildArg>-Drevapi.skip=true</buildArg>
-                </buildArgs>
-              </repository>
-              <repository>
-                <id>cmdgw</id>
-                <selectors>
-                  <selector>org.hawkular.cmdgw</selector>
-                </selectors>
-                <url>${cmdgw.scm.url}</url>
-                <buildArgs>
-                  <buildArg>-Dcheckstyle.skip=true</buildArg>
-                  <buildArg>-Dlicense.skip=true</buildArg>
-                  <buildArg>-Drevapi.skip=true</buildArg>
-                </buildArgs>
-              </repository>
-              <repository>
-                <id>datamining</id>
-                <selectors>
-                  <selector>org.hawkular.datamining</selector>
-                </selectors>
-                <url>${datamining.scm.url}</url>
-                <buildArgs>
-                  <buildArg>-Dcheckstyle.skip=true</buildArg>
-                  <buildArg>-Dlicense.skip=true</buildArg>
-                  <buildArg>-Drevapi.skip=true</buildArg>
-                </buildArgs>
-              </repository>
-              <repository>
-                <id>inventory</id>
-                <selectors>
-                  <selector>org.hawkular.inventory</selector>
-                </selectors>
-                <url>${inventory.scm.url}</url>
-                <buildArgs>
-                  <buildArg>-Dcheckstyle.skip=true</buildArg>
-                  <buildArg>-Dlicense.skip=true</buildArg>
-                  <buildArg>-Drevapi.skip=true</buildArg>
-                </buildArgs>
-              </repository>
-              <repository>
-                <id>metrics</id>
-                <selectors>
-                  <selector>org.hawkular.metrics</selector>
-                </selectors>
-                <url>${metrics.scm.url}</url>
-                <buildArgs>
-                  <buildArg>-Dcheckstyle.skip=true</buildArg>
-                  <buildArg>-Dlicense.skip=true</buildArg>
-                  <buildArg>-Drevapi.skip=true</buildArg>
-                </buildArgs>
-              </repository>
-              <repository>
-                <id>keycloak</id>
-                <selectors>
-                  <selector>org.keycloak</selector>
-                </selectors>
-                <url>${keycloak.scm.url}</url>
-                <buildArgs>
-                  <buildArg>-Pdistribution</buildArg>
-                  <buildArg>-Dwildfly.version=${version.org.wildfly}</buildArg>
-                  <buildArg>-Dwildfly.core.version=${version.org.wildfly.core}</buildArg>
-                  <buildArg>-Dwildfly.build-tools.version=${version.org.wildfly.build}</buildArg>
-                  <buildArg>--projects</buildArg>
-                  <buildArg>distribution/feature-packs/adapter-feature-pack,distribution/feature-packs/server-feature-pack</buildArg>
-                  <buildArg>--also-make</buildArg>
-                </buildArgs>
-              </repository>
-            </repositories>
-          </configuration>
-        </plugin>
-
-        <plugin>
           <groupId>org.wildfly.build</groupId>
           <artifactId>wildfly-feature-pack-build-maven-plugin</artifactId>
           <version>${version.org.wildfly.build}</version>
@@ -1087,12 +920,6 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.l2x6.maven.srcdeps</groupId>
-        <artifactId>srcdeps-maven-plugin</artifactId>
-        <extensions>true</extensions>
       </plugin>
 
     </plugins>
