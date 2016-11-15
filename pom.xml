@@ -704,6 +704,10 @@
             <exclude>**/*.woff</exclude>
             <exclude>**/*.html</exclude>
             <exclude>**/*.htm</exclude>
+            <exclude>.mvn/jvm.config</exclude>
+            <exclude>.mvn/maven.config</exclude>
+            <exclude>mvnw</exclude>
+            <exclude>mvnw.cmd</exclude>
           </excludes>
           <mapping>
             <conf>SCRIPT_STYLE</conf>
