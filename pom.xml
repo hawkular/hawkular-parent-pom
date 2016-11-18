@@ -224,7 +224,7 @@
     <version.commons-codec>1.10</version.commons-codec>
     <version.commons-configuration>1.10</version.commons-configuration>
     <version.io.gatling.highcharts>2.1.6</version.io.gatling.highcharts>
-    <version.io.reactivex>1.1.7</version.io.reactive>
+    <version.io.reactivex>1.1.7</version.io.reactivex>
     <version.io.swagger>1.5.8</version.io.swagger>
     <!-- keep in sync with modules/system/layers/base/org/joda/time of the current WildFly/EAP -->
     <version.joda-time>2.7</version.joda-time>
