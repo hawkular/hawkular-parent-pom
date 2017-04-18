@@ -211,7 +211,7 @@
       Ordering: alphabetic
     -->
     <!-- keep in sync with version.org.apache.cassandra -->
-    <version.com.datastax.cassandra>3.0.5</version.com.datastax.cassandra>
+    <version.com.datastax.cassandra>3.2.0</version.com.datastax.cassandra>
     <!-- keep in sync with modules/system/layers/base/com/fasterxml/jackson/core of the current WildFly/EAP -->
     <version.com.fasterxml.jackson.core>2.5.4</version.com.fasterxml.jackson.core>
     <!-- keep in sync with modules/system/layers/base/com/google/guava of the current WildFly/EAP -->
