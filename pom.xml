@@ -134,6 +134,7 @@
       release.properties,
       **/*.d.ts,
       **/vendor/*.js,
+      **/*.bundle.js,
     </hawkular.checkstyle.excludes>
     <!-- the default value pointing at suppressions.xml in hawkular-build-tools -->
     <checkstyle.suppressions.file>hawkular-checkstyle/suppressions.xml</checkstyle.suppressions.file>
