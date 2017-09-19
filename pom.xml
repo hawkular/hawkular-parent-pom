@@ -212,7 +212,7 @@
     -->
     <version.com.datastax.cassandra>3.3.0</version.com.datastax.cassandra>
     <!-- keep in sync with modules/system/layers/base/com/fasterxml/jackson/core of the current WildFly/EAP -->
-    <version.com.fasterxml.jackson.core>2.5.4</version.com.fasterxml.jackson.core>
+    <version.com.fasterxml.jackson.core>2.7.4</version.com.fasterxml.jackson.core>
     <!-- keep in sync with modules/system/layers/base/com/google/guava of the current WildFly/EAP -->
     <version.com.google.guava>18.0</version.com.google.guava>
     <version.com.google.protobuf>2.6.1</version.com.google.protobuf>
