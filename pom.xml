@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright 2015-2017 Red Hat, Inc. and/or its affiliates
+    Copyright 2015-2018 Red Hat, Inc. and/or its affiliates
     and other contributors as indicated by the @author tags.
 
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,7 @@
 
   <groupId>org.hawkular</groupId>
   <artifactId>hawkular-parent</artifactId>
-  <version>57-SNAPSHOT</version>
+  <version>58-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Hawkular Parent</name>
