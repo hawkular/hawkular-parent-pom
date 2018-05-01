@@ -22,7 +22,7 @@
 
   <groupId>org.hawkular</groupId>
   <artifactId>hawkular-parent</artifactId>
-  <version>57</version>
+  <version>58-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Hawkular Parent</name>
