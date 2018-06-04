@@ -214,7 +214,7 @@
     <!-- keep in sync with modules/system/layers/base/com/fasterxml/jackson/core of the current WildFly/EAP -->
     <version.com.fasterxml.jackson.core>2.7.4</version.com.fasterxml.jackson.core>
     <!-- keep in sync with modules/system/layers/base/com/google/guava of the current WildFly/EAP -->
-    <version.com.google.guava>18.0</version.com.google.guava>
+    <version.com.google.guava>20.0</version.com.google.guava>
     <version.com.google.protobuf>2.6.1</version.com.google.protobuf>
     <version.com.squareup.okhttp>3.4.2</version.com.squareup.okhttp>
     <!-- com.wordnik is deprecated. Use io.swagger instead. -->
